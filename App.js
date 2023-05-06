@@ -51,7 +51,7 @@ export default function App() {
   if (!fontsLoaded) {
     return (
       <View>
-        <Text>Deneme</Text>
+        <Text>Fontlar Yüklendi</Text>
       </View>
     );
   }
