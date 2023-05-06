@@ -7,7 +7,7 @@ let Title = (props) => {
 let styles = StyleSheet.create({
   title: {
     fontSize: 24,
-    fontWeight: "bold",
+    fontWeight: "800",
     color: "#ffea00",
     borderColor: "#ffea00",
     borderWidth: 2,
