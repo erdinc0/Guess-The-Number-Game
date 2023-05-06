@@ -6,15 +6,6 @@ let GameOver = (props) => {
   return (
     <View style={styles.conainer}>
       <Text style={styles.text}>{props.chosenNumber}</Text>
-      <PrimaryButton
-        style={styles.buton}
-        onPress={() => {
-          props.setGameOver(false);
-          props.setUserNumber();
-        }}
-      >
-        Yeniden Başla
-      </PrimaryButton>
     </View>
   );
 };
