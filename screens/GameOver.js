@@ -1,10 +1,12 @@
 import { View, Text, StyleSheet } from "react-native";
 import Colors from "../constants/colors";
 import PrimaryButton from "../components/ui/PrimaryButton";
+import Title from "../components/ui/Title";
 
 let GameOver = (props) => {
   return (
     <View style={styles.conainer}>
+      <Title style={{ width: "90%" }} baslik={"Game Over"}></Title>
       <Text style={styles.text}>{props.chosenNumber}</Text>
     </View>
   );

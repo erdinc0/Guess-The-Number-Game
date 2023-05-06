@@ -13,6 +13,7 @@ let styles = StyleSheet.create({
     borderWidth: 2,
     textAlign: "center",
     padding: 12,
+    borderRadius: 20,
   },
   icerik: {},
 });
