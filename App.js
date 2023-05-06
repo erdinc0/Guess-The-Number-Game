@@ -45,7 +45,7 @@ export default function App() {
   }
 
   const [fontsLoaded] = useFonts({
-    bebasNeue: require("./assets/fonts/ColaKind.ttf"),
+    bebasNeue: require("./assets/fonts/Bebas.ttf"),
   });
 
   if (!fontsLoaded) {
