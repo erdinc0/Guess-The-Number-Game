@@ -14,6 +14,7 @@ let styles = StyleSheet.create({
     textAlign: "center",
     padding: 12,
     borderRadius: 20,
+    fontFamily: "bebasNeue",
   },
   icerik: {},
 });

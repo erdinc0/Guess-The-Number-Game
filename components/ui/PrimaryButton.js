@@ -26,6 +26,8 @@ let styles = StyleSheet.create({
   text: {
     color: "white",
     textAlign: "center",
+    fontFamily: "bebasNeue",
+    fontSize: 20,
   },
   pressed: {
     opacity: 0.55,

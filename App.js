@@ -58,7 +58,7 @@ export default function App() {
   }
 
   const [fontsLoaded] = useFonts({
-    bebasNeue: require("./assets/fonts/ColaKind.ttf"),
+    bebasNeue: require("./assets/fonts/Righteous.ttf"),
   });
 
   if (!fontsLoaded) {
@@ -66,20 +66,22 @@ export default function App() {
   }
 
   return (
-    <LinearGradient colors={["#4e0329", "#ddb52f"]} style={styles.linear}>
-      <ImageBackground
-        style={{ flex: 1 }}
-        source={{
-          uri: "https://previews.123rf.com/images/xeni800/xeni8001804/xeni800180400029/99095727-gaming-dice-with-copy-space-on-pink-background-concept-for-games-game-board-presentation-banners.jpg",
-        }}
-        resizeMode="cover"
-        imageStyle={{ opacity: 0.3 }}
-        blurRadius={3}
-      >
-        <SafeAreaView style={styles.maincontainer}>{screen}</SafeAreaView>
-      </ImageBackground>
+    <>
       <StatusBar style="light" />
-    </LinearGradient>
+      <LinearGradient colors={["#4e0329", "#ddb52f"]} style={styles.linear}>
+        <ImageBackground
+          style={{ flex: 1 }}
+          source={{
+            uri: "https://previews.123rf.com/images/xeni800/xeni8001804/xeni800180400029/99095727-gaming-dice-with-copy-space-on-pink-background-concept-for-games-game-board-presentation-banners.jpg",
+          }}
+          resizeMode="cover"
+          imageStyle={{ opacity: 0.3 }}
+          blurRadius={3}
+        >
+          <SafeAreaView style={styles.maincontainer}>{screen}</SafeAreaView>
+        </ImageBackground>
+      </LinearGradient>
+    </>
   );
 }
 

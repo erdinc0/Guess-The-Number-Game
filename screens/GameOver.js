@@ -1,9 +1,26 @@
-import { View, Text, StyleSheet, Image, Dimensions } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  Dimensions,
+  Platform,
+} from "react-native";
 import Colors from "../constants/colors";
 import PrimaryButton from "../components/ui/PrimaryButton";
 import Title from "../components/ui/Title";
 
 let width = Dimensions.get("screen").width;
+
+let gameOverurl = "";
+
+if (Platform.OS === "ios") {
+  gameOverurl =
+    "https://cdn.osxdaily.com/wp-content/uploads/2019/02/apple-logo-screensaver-from-github-610x381.jpg";
+} else {
+  gameOverurl =
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJySkocaG7VC0e7zd6wOr_7mZce3sBD3EVZA&usqp=CAU";
+}
 
 let GameOver = (props) => {
   return (
@@ -13,7 +30,7 @@ let GameOver = (props) => {
         <View style={styles.imageContainer}>
           <Image
             source={{
-              uri: "https://img.freepik.com/free-vector/game-with-glitch-effect_225004-661.jpg?w=2000",
+              uri: gameOverurl,
             }}
             style={styles.image}
           ></Image>
@@ -40,11 +57,11 @@ let styles = StyleSheet.create({
     alignItems: "center",
   },
   text: {
-    color: Colors.primary,
+    color: "#ffffff",
     fontSize: 28,
     fontWeight: "bold",
     padding: 24,
-
+    fontFamily: "bebasNeue",
     textAlign: "center",
   },
   buton: {

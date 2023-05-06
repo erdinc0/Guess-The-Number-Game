@@ -6,6 +6,9 @@ import {
   StyleSheet,
   Alert,
   Dimensions,
+  KeyboardAvoidingView,
+  ScrollView,
+  Platform,
 } from "react-native";
 import PrimaryButton from "../components/ui/PrimaryButton";
 import { useState } from "react";
@@ -45,34 +48,38 @@ const StartGameScreen = (props) => {
   };
 
   return (
-    <View>
-      <View style={styles.baslik}>
-        <Title style={styles.title} baslik="Aklından Bir Sayı Tut"></Title>
-      </View>
-      <View style={styles.container}>
-        <View style={styles.textinputcontainer}>
-          <TextInput
-            style={styles.textInput}
-            maxLength={2}
-            keyboardType="number-pad"
-            autoCapitalize="none"
-            autoCorrect={false}
-            value={enteredNumber}
-            onChangeText={setEnteredNumber}
-            placeholder="Bir Sayı Tut"
-            placeholderTextColor={"#b32c6f"}
-          />
-        </View>
-        <View style={styles.butonscontainer}>
-          <View style={styles.butoncontainer}>
-            <PrimaryButton onPress={resetInput}>Reset</PrimaryButton>
+    <ScrollView>
+      <KeyboardAvoidingView style={{ flex: 1 }} behavior="position">
+        <View>
+          <View style={styles.baslik}>
+            <Title style={styles.title} baslik="Aklından Bir Sayı Tut"></Title>
           </View>
-          <View style={styles.butoncontainer}>
-            <PrimaryButton onPress={confirmbutton}>Confirm</PrimaryButton>
+          <View style={styles.container}>
+            <View style={styles.textinputcontainer}>
+              <TextInput
+                style={styles.textInput}
+                maxLength={2}
+                keyboardType="number-pad"
+                autoCapitalize="none"
+                autoCorrect={false}
+                value={enteredNumber}
+                onChangeText={setEnteredNumber}
+                placeholder="Bir Sayı Tut"
+                placeholderTextColor={"#c34276"}
+              />
+            </View>
+            <View style={styles.butonscontainer}>
+              <View style={styles.butoncontainer}>
+                <PrimaryButton onPress={resetInput}>Reset</PrimaryButton>
+              </View>
+              <View style={styles.butoncontainer}>
+                <PrimaryButton onPress={confirmbutton}>Confirm</PrimaryButton>
+              </View>
+            </View>
           </View>
         </View>
-      </View>
-    </View>
+      </KeyboardAvoidingView>
+    </ScrollView>
   );
 };
 
@@ -90,19 +97,24 @@ let styles = StyleSheet.create({
     alignItems: "center",
   },
   textInput: {
-    height: 50,
+    height: 75,
     fontSize: width < 380 ? 18 : 24,
     borderBottomColor: "#ddb52f",
-    borderBottomWidth: 2,
+    elevation: 4,
     color: "#ddb52f",
     marginVertical: 8,
     fontWeight: "bold",
-    width: 50,
     textAlign: "center",
     backgroundColor: Colors.secondary,
-    width: 200,
+    width: "80%",
     borderRadius: 28,
     padding: 14,
+    fontFamily: "bebasNeue",
+  },
+  textinputcontainer: {
+    width: "100%",
+    alignItems: "center",
+    flex: 1,
   },
   butonscontainer: {
     flexDirection: "row",
@@ -114,9 +126,6 @@ let styles = StyleSheet.create({
   baslik: {
     padding: 16,
     marginHorizontal: 24,
-  },
-  title: {
-    fontFamily: "bebasNeue",
   },
 });
 

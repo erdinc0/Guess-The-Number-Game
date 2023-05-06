@@ -23,6 +23,7 @@ const styles = StyleSheet.create({
     color: Colors.primary,
     fontSize: 36,
     fontWeight: "bold",
+    fontFamily: "bebasNeue",
   },
 });
 
