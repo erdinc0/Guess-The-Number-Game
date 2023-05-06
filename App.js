@@ -13,6 +13,7 @@ import GameOver from "./screens/GameOver";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect, useState } from "react";
+import LoadingScreen from "./screens/LoadingScreen";
 
 export default function App() {
   let pickedNumberHandler = (pickedNumber) => {
@@ -25,8 +26,15 @@ export default function App() {
 
   let [userNumber, setUserNumber] = useState();
   let [gameOver, setGameOver] = useState(true);
+  let [roundNumber, setRoundNumber] = useState(0);
 
   let gameOverHandler = (istrue) => {
+    if (istrue) {
+    } else {
+      setUserNumber(null);
+      setRoundNumber(0);
+      console.log("sıfırlandı");
+    }
     setGameOver(istrue);
   };
 
@@ -34,26 +42,27 @@ export default function App() {
     screen = (
       <GameOver
         chosenNumber={userNumber}
-        setGameOver={gameOverHandler}
-        setUserNumber={setUserNumber}
+        yenidenBaslatHandler={gameOverHandler}
+        roundNumber={roundNumber}
       />
     );
   } else if (userNumber) {
     screen = (
-      <GameScreen chosenNumber={userNumber} setGameOver={gameOverHandler} />
+      <GameScreen
+        chosenNumber={userNumber}
+        setGameOver={gameOverHandler}
+        setRoundNumber={setRoundNumber}
+        roundNumber={roundNumber}
+      />
     );
   }
 
   const [fontsLoaded] = useFonts({
-    bebasNeue: require("./assets/fonts/Bebas.ttf"),
+    bebasNeue: require("./assets/fonts/ColaKind.ttf"),
   });
 
   if (!fontsLoaded) {
-    return (
-      <View>
-        <Text>Fontlar Yüklendi</Text>
-      </View>
-    );
+    return <LoadingScreen>Fontlar Yükleniyor</LoadingScreen>;
   }
 
   return (
@@ -61,11 +70,11 @@ export default function App() {
       <ImageBackground
         style={{ flex: 1 }}
         source={{
-          uri: "https://www.foodbloggersofcanada.com/wp-content/uploads/2016/09/CookieStyling_01.jpg",
+          uri: "https://previews.123rf.com/images/xeni800/xeni8001804/xeni800180400029/99095727-gaming-dice-with-copy-space-on-pink-background-concept-for-games-game-board-presentation-banners.jpg",
         }}
         resizeMode="cover"
-        imageStyle={{ opacity: 0.25 }}
-        blurRadius={2}
+        imageStyle={{ opacity: 0.3 }}
+        blurRadius={3}
       >
         <SafeAreaView style={styles.maincontainer}>{screen}</SafeAreaView>
       </ImageBackground>
