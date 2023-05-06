@@ -5,11 +5,14 @@ import {
   SafeAreaView,
   StyleSheet,
   Alert,
+  Dimensions,
 } from "react-native";
 import PrimaryButton from "../components/ui/PrimaryButton";
 import { useState } from "react";
 import Colors from "../constants/colors";
 import Title from "../components/ui/Title";
+
+let width = Dimensions.get("screen").width;
 
 const StartGameScreen = (props) => {
   let [enteredNumber, setEnteredNumber] = useState("");
@@ -88,7 +91,7 @@ let styles = StyleSheet.create({
   },
   textInput: {
     height: 50,
-    fontSize: 24,
+    fontSize: width < 380 ? 18 : 24,
     borderBottomColor: "#ddb52f",
     borderBottomWidth: 2,
     color: "#ddb52f",

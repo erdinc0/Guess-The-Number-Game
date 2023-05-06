@@ -5,13 +5,13 @@ import {
   Text,
   View,
   ImageBackground,
+  Dimensions,
 } from "react-native";
 import StartGameScreen from "./screens/StartGameScreen";
 import { LinearGradient } from "expo-linear-gradient";
 import GameScreen from "./screens/GameScreen";
 import GameOver from "./screens/GameOver";
 import { useFonts } from "expo-font";
-import * as SplashScreen from "expo-splash-screen";
 import { useEffect, useState } from "react";
 import LoadingScreen from "./screens/LoadingScreen";
 
