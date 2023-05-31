@@ -62,7 +62,7 @@ export default function App() {
   });
 
   if (!fontsLoaded) {
-    return <LoadingScreen>Fontlar Yükleniyor</LoadingScreen>;
+    return <LoadingScreen>Fontlar Yükleniyor...</LoadingScreen>;
   }
 
   return (
