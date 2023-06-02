@@ -33,7 +33,7 @@ export default function App() {
     } else {
       setUserNumber(null);
       setRoundNumber(0);
-      console.log("sıfırlandı");
+      console.log("sıfırlandı.");
     }
     setGameOver(istrue);
   };
